@@ -1,0 +1,44 @@
+#Goal is to play a game of rock, paper, scissors with the computer.
+
+#First gonna import random library
+import random
+
+#Next gonna create variables for player and computer choice and prompt player with input
+def get_choices():
+  player=input("Which do you wish to play (rock, paper, or scissors):")
+  computer=random.choice(["rock", "paper" , "scissors"]) #selects randomly a string
+  choices= {"player":player,"computer":computer} #creates a vector of strings
+  return choices #returns the vector
+
+#Next we need to create nested if statements to determine whether we won or lost
+def win_condition(player,computer): #Takes two input variables
+  print(f"Player has selected {player} and computer has selected {computer}") #print function allows us to call variables in between {}
+  if player == computer: #true or false if 
+    return "It has been a tie"
+    
+  elif player == "rock":
+    if computer == "scissors":
+      return "You have smashed scissors. You WIN!"
+    else: #else is indented with its corresponding if
+      return "You have been smothered by paper. You LOSE!"
+    
+  elif player == "paper":
+    if computer == "rock":
+      return "You have smothered rock. You WIN!"
+    else:
+      return "You have been sliced by scissors. You LOSE!"
+
+  elif player == "scissors":
+    if computer == "paper":
+      return "You have sliced paper. You WIN!"
+    else:
+        return "You have been crushed by rock. You LOSE!"
+
+#Now we need to call our choices function
+storeChoices=get_choices()
+
+#Next we input our two variables into the win/loss checker
+result= win_condition(storeChoices["player"],storeChoices["computer"])
+
+#Print the output of win_condition function
+print(result)
