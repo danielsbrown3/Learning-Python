@@ -1,0 +1,93 @@
+#Data types
+complex #complex numbers
+bool #booleans
+list #lists
+tuple #tuples
+range #ranges
+dict #dictionaries
+set #sets
+
+#Data types: The different data types can be convereted from one type to another. You can also check the data type using isinstance
+
+print(isinstance(3.4,float))
+
+print(isinstance(3.4,int))
+
+print(isinstance("Daniel",str))
+
+#Can convert floats into int and int to float etc
+
+variable= 3.4
+print(isinstance(variable,float)) #returns true
+variable=int(3.4)
+print(isinstance(variable,float)) #returns false
+
+#Operations 
+print(4+3) #addition
+print(4-3) #subtraction
+print(4*3) #multiplication
+print(4/3) #division
+print(4%3) #divide with remainder
+print(4**3) #exponent
+print(4//3) #divide and round down
+
+#Can slap on an equals sign to do the operation on variable
+x = 3
+x += 4
+print(x) #prints 7
+
+#Comparison Operators
+a=1
+b=2
+
+a == b #true if equal
+a != b #true if not equal
+a > b #true if greater than 
+a < b #true if less than 
+
+#Boolean operations
+
+#or operator prints the true value (0 is false 1 is true)
+print(0 or 1)
+print(False or 'Daniel')
+print('Brown' or 'Daniel')
+
+#true or false
+conditon1= True
+condition2= False
+
+not conditon1 #false
+conditon1 and condition2 #false because at least one is false
+conditon1 or condition2 #true because at least one is true
+
+#printing with quotes
+
+print("""Daniel
+is the coolest
+everrr
+""") #three quotations allows to have multiple lines
+
+name="DaNiEl"
+print(name.lower()) #lower case
+print(name.upper()) #upper case
+print(len(name)) #counts the amount of letters in a string
+print("aN" in name) #checks in aN in name case sensitive
+print("an" in name)
+
+print("Da\niel") #moves it to a new line
+
+print(name[0]) #Calls the first letter of name
+print(name[-1])
+print(name[1:4])
+
+
+
+#More booleans
+
+DanielLikesTea=True
+DanielHatesTea=False
+
+Tea=any([DanielHatesTea,DanielLikesTea]) #returns true if any statements in the array are true
+print(Tea) #true
+Tea=all([DanielHatesTea,DanielLikesTea]) #returns true if all statements in the array are true
+print(Tea) #false
