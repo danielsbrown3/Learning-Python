@@ -1,0 +1,39 @@
+Counting in strings
+for word in words: counts[word] = counts.get(word,0) + 1
+print('Counts',counts)]
+loops through each elements one at a time using word as the word as the label in the dictionary and 0 as the number of the element
+
+counts{'the':0,'cat':1,...etc
+
+when using a dictionary can loop through both the label and the value
+
+jjj={'chuck' : 1 , 'fred' : 42 , 'jan' : 100}
+for aaa,bbb in jjj.items()
+  print(aaa,bbb)
+aaa                bbb
+[jan]              100
+[chuck]            1
+[fred]             42
+
+Now lets look at how to tally how many of the same word we find in each paragraph and how to determine what is the maximum
+
+counts=dict() # initialize the dictionary
+for line in handle: 
+  words=line.split() # splits the words of each line into their own elements
+  for word in words: # loops through each individual line, has to come after inital loop because looking at individual lines
+    counts[word]= counts.get(word,0) + 1
+
+#the above part of the code creates a histogram or keeps track of how many times a word or 'key' appears
+#now we are going to find the maximum count and what word is associated with that count by searching through each word and count
+
+bigcount= None
+bigword= None
+for word,count in counts.items():
+  if bigcount is None or count > bigcount # checks if the count is larger than the previous count
+    bigword=word
+    bigcount=count
+print(bigword,bigcount)
+
+
+
+
