@@ -34,6 +34,21 @@ for word,count in counts.items():
     bigcount=count
 print(bigword,bigcount)
 
-
+#Counting twice and I dont know why
+name = input("Enter file:")
+if len(name) < 1:
+    name = "mbox-short.txt"
+handle = open(name)   
+#look for "from" lines
+counts=dict()
+lst=list()
+for line in handle:
+    if line.startswith("From"):
+        words=line.split()
+        lst.append(words[1])
+for word in lst:
+    counts[word]=counts.get(word,0)+1
+print(counts)
+print(lst)
 
 
