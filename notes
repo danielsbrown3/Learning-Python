@@ -34,7 +34,7 @@ for word,count in counts.items():
     bigcount=count
 print(bigword,bigcount)
 
-#Counting twice and I dont know why
+#Counting twice and I dont know why #LMAO its because I needed to add a space after "from " Im going to cry
 name = input("Enter file:")
 if len(name) < 1:
     name = "mbox-short.txt"
