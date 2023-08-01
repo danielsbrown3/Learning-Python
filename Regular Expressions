@@ -1,0 +1,33 @@
+Regular expression quick guide
+^ Matches the beginning of a line
+$ Matches the end of the line
+. Matches any character
+\s Matches whitespace
+\S Matcches any non-whitespace character
+* Repeats a character zero or more times
+*? Repeats a chracter zero or more times (non-greedy) <- not too sure what greedy means (see below)
++ Repeats a chracter one or more times 
++? Repeats a character one or more times (non-greedy)
+[aeiou] Matches a single character in the listed set
+[^XYZ] Matches a single character not in the listed set
+[a-z0-9] The set of characters can include a range
+( Indicates where string extraction is to start
+) Indicates where string extraction is to end
+
+y= re.findall('[0-9]+',x)
+checks for 0 - 9 
+super op, checks even if its one instance in a string, has to include at least one number from 0 to 9 to return true
+
+Greedy matching prefers the longest match
+x = 'From: Using the : character'
+y=re.findall('^F.+:',x)
+print(y)
+>>['From: Using the :']
+
+Non-Greedy matching prefers the shortest match
+
+x = 'From: Using the : character'
+y=re.findall('^F.+?:',x)
+print(y)
+>>['From: ']
+
